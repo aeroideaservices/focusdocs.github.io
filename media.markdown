@@ -4,13 +4,7 @@ title: Медиа
 permalink: /media/
 ---
 
-{: .note }
-Примеры подключения всех плагинов есть в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
-
-{: .note }
-Все модули плагина находятся тут <https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/media>
-
-
+![broken img]({{ "/img/media-preview.png" | relative_url}})
 
 ## Возможности
 
@@ -18,19 +12,31 @@ permalink: /media/
 
 ## Установка
 
+* `media/plugin` - основной плагин
+
 ```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/media/plugin
+```
+* `media/postgres` - адаптер для работы с базой данных postgres
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/media/postgres
+```
+* `media/rest` - адаптер, реализующий REST API
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/media/rest
+```
+* `media/aws-s3` - адаптер, реализующий интерфейс файлового хранилища, и работающий с s3-совместимыми хранилищами
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/media/aws-s3
 ```
 
-* `media/plugin` - основной плагин
-* `media/postgres` - адаптер для работы с базой данных postgres
-* `media/rest` - адаптер, реализующий REST API
-* `media/aws-s3` - адаптер, реализующий интерфейс файлового хранилища, и работающий с s3-совместимыми хранилищами
-
-Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
+{: .note-title }
+> Кастомизация
+>
+> Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
 
 Определить основные переменные фокуса
 
@@ -235,13 +241,7 @@ func (r Router) Router() *gin.Engine {
 
 Пока что можно лишь настраивать переменную `focus.media.baseUrl` - отвечает за относительный путь до файлового хранилища. Используется для построения полного пути до файла.
 
-## Примеры использования
+## Дополнительно
 
-Примеры использования можно найти в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
-
-Тут <https://gitlab.aeroidea.ru/internal-projects/focus/-/blob/develop/models/examples/promo.go#L17>
-
-И тут <https://gitlab.aeroidea.ru/internal-projects/focus/-/blob/develop/models/examples/product.go#L15>
-
-
-
+[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/media){: .btn .btn-blue }

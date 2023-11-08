@@ -5,9 +5,8 @@ permalink: /models/
 nav_order: 1
 has_children: true
 ---
-Примеры подключения всех плагинов есть в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
 
-Все модули плагина находятся тут <https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/models>
+![broken img]({{ "/img/models-preview.png" | relative_url}})
 
 ## Возможности
 
@@ -15,21 +14,40 @@ has_children: true
 
 ## Установка
 
+* `models/plugin` - основной плагин
+
 ```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/models/plugin
+```
+
+* `models/postgres` - адаптер для работы с базой данных postgres
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/models/postgres
+```
+
+* `models/rest` - адаптер, реализующий REST API
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/models/rest
+```
+
+* `models/aws-s3` - адаптер, реализующий интерфейс файлового хранилища, и работающий с s3-совместимыми хранилищами
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/models/aws-s3
+```
+
+* `models/xlsx` - адаптер, реализующий экспорт в xlsx файлы *TODO*
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/models/xlsx
 ```
 
-* `models/plugin` - основной плагин
-* `models/postgres` - адаптер для работы с базой данных postgres
-* `models/rest` - адаптер, реализующий REST API
-* `models/aws-s3` - адаптер, реализующий интерфейс файлового хранилища, и работающий с s3-совместимыми хранилищами
-* `models/xlsx` - адаптер, реализующий экспорт в xlsx файлы *TODO*
-
-Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
+{: .note-title }
+> Кастомизация
+>
+> Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
 
 Определить основные переменные фокуса
 
@@ -355,7 +373,7 @@ func (r Router) Router() *gin.Engine {
 
 ## Настройка плагина
 
-Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа](https://wiki.aeroidea.ru/doc/plagin-media-4XjOy3JqLK).
+Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа]({{"/media/" | | relative_url}}).
 
 * `focus.models.fileStorage.baseEndpoint` - отвечает за относительный путь до файлового хранилища. Используется для построения полного пути до файла.
 * `  focus.models.actions.models.callbacks` - добавляет основные колбэки для каждой модели отдельно: `postCreate`, `postUpdare` и `postDelete`\nПример:
@@ -377,16 +395,7 @@ func (r Router) Router() *gin.Engine {
 	},
 ```
 
-## Настройка и подключение моделей
+## Дополнительно
 
-[Определение моделей](https://wiki.aeroidea.ru/doc/opredelenie-modeli-ObF1QgTBOa)
-
-[Поля формы](https://wiki.aeroidea.ru/doc/polya-formy-oeQjkUPc4y)
-
-[Тэг фокус](https://wiki.aeroidea.ru/doc/teg-focus-6JmWN0UaO5)
-
-## Примеры использования
-
-Примеры использования можно найти в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
-
-А также в модуле <https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/models/examples>
+[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/models){: .btn .btn-blue }
