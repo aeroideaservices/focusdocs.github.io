@@ -4,9 +4,13 @@ title: Медиа
 permalink: /media/
 ---
 
+{: .note }
 Примеры подключения всех плагинов есть в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
 
+{: .note }
 Все модули плагина находятся тут <https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/media>
+
+
 
 ## Возможности
 
