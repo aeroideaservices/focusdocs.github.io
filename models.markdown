@@ -2,6 +2,8 @@
 layout: page
 title: Модели
 permalink: /models/
+nav_order: 1
+has_children: true
 ---
 Примеры подключения всех плагинов есть в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
 

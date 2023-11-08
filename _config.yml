@@ -57,3 +57,6 @@ page_paths:
   - media.md
   - models.md
   - menu.md
+
+plugins:
+  - jekyll-default-layout
