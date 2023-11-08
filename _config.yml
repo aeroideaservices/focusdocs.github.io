@@ -29,8 +29,6 @@ url: "https://aeroideaservices.github.io" # the base hostname & protocol for you
 
 # Build settings
 theme: just-the-docs
-#plugins:
-#  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
