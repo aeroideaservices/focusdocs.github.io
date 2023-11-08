@@ -88,7 +88,6 @@ DEPENDENCIES
   jekyll (~> 4.3.2)
   jekyll-feed (~> 0.12)
   just-the-docs
-  kramdown
   minima (~> 2.5)
   tzinfo (>= 1, < 3)
   tzinfo-data
