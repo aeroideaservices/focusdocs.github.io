@@ -3,9 +3,8 @@ layout: page
 title: Меню
 permalink: /menu/
 ---
-Примеры подключения всех плагинов есть в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
 
-Все модули плагина находятся тут <https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/menu>
+![broken img]({{ "/img/menu-preview.png" | relative_url}})
 
 ## Возможности
 
@@ -13,17 +12,28 @@ permalink: /menu/
 
 ## Установка
 
+* `menu/plugin` - основной плагин
+
 ```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/menu/plugin
+```
+
+* `menu/postgres` - адаптер для работы с базой данных postgres
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/menu/postgres
+```
+
+* `menu/rest` - адаптер, реализующий REST API
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/menu/rest
 ```
 
-* `menu/plugin` - основной плагин
-* `menu/postgres` - адаптер для работы с базой данных postgres
-* `menu/rest` - адаптер, реализующий REST API
-
-Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
+{: .note-title }
+> Кастомизация
+>
+> Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
 
 Определить основные переменные фокуса
 
@@ -160,6 +170,7 @@ func (r Router) Router() *gin.Engine {
 
 `focus.menu.maxMenuItemsDepth` - максимальная вложенность пунктов меню
 
-## Примеры использования
+## Дополнительно
 
-Примеры использования можно найти в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
+[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/menu){: .btn .btn-blue }

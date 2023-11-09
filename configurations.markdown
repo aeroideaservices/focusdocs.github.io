@@ -1,12 +1,10 @@
 ---
 layout: page
-title: Настройки
+title: Конфигурации
 permalink: /configurations/
 ---
 
-Примеры подключения всех плагинов есть в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
-
-Все модули плагина находятся тут <https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/configurations>
+![broken img]({{ "/img/conf-preview.png" | relative_url}})
 
 ## Возможности
 
@@ -14,17 +12,29 @@ permalink: /configurations/
 
 ## Установка
 
+* `configurations/plugin` - основной плагин
+
 ```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/configurations/plugin
+```
+
+* `configurations/postgres` - адаптер для работы с базой данных postgres
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/configurations/postgres
+```
+
+* `configurations/rest` - адаптер, реализующий REST API
+
+```bash
 go get gitlab.aeroidea.ru/internal-projects/focus/configurations/rest
 ```
 
-* `configurations/plugin` - основной плагин
-* `configurations/postgres` - адаптер для работы с базой данных postgres
-* `configurations/rest` - адаптер, реализующий REST API
 
-Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
+{: .note-title }
+> Кастомизация
+>
+> Любой из адаптеров можно заменить своей реализацией. Важно, чтобы реализация была совместима с интерфейсами плагина.
 
 Определить основные переменные фокуса
 
@@ -157,8 +167,9 @@ func (r Router) Router() *gin.Engine {
 
 ## Настройка
 
-Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа](https://wiki.aeroidea.ru/doc/plagin-media-4XjOy3JqLK).
+Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа]({{ "/media" | relative_url }}).
 
-## Примеры использования
+## Дополнительно
 
-Примеры использования можно найти в сервисе демо <https://gitlab.aeroidea.ru/internal-projects/focus-group/demo>
+[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/configurations){: .btn .btn-blue }
