@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Модели
-permalink: /models/
-nav_order: 1
+permalink: /plugins/models/
+parent: Плагины
+nav_order: 3
 has_children: true
 ---
 
@@ -373,7 +374,7 @@ func (r Router) Router() *gin.Engine {
 
 ## Настройка плагина
 
-Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа]({{"/media/" | relative_url}}).
+Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа]({{"/plugins/media/" | relative_url}}).
 
 * `focus.models.fileStorage.baseEndpoint` - отвечает за относительный путь до файлового хранилища. Используется для построения полного пути до файла.
 * `  focus.models.actions.models.callbacks` - добавляет основные колбэки для каждой модели отдельно: `postCreate`, `postUpdare` и `postDelete`\nПример:

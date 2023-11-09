@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Поля формы моделей
-permalink: /models/fields
+permalink: /plugins/models/fields
+grand_parent: Плагины
 parent: Модели
 nav_order: 2
 ---

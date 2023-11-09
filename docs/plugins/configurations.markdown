@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Конфигурации
-permalink: /configurations/
+permalink: /plugins/configurations/
+parent: Плагины
 ---
 
 ![broken img]({{ "/img/conf-preview.png" | relative_url}})
@@ -167,7 +168,7 @@ func (r Router) Router() *gin.Engine {
 
 ## Настройка
 
-Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа]({{ "/media" | relative_url }}).
+Для того, чтобы в плагине конфигураций можно было использовать настройки типа медиа, необходимо подключить [Плагин Медиа]({{ "/plugins/media" | relative_url }}).
 
 ## Дополнительно
 

@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Определение модели
-permalink: /models/what-is-model
+permalink: /plugins/models/what-is-model
+grand_parent: Плагины
 parent: Модели
 nav_order: 2
 ---
@@ -21,6 +22,6 @@ type Focusable interface {
 
 Метод `ModelTitle()` - определяет название модели, которое будет отображаться в UI.
 
-Для настройки полей модели используется [тег focus]({{ "/models/focus" | relative_url }}).
+Для настройки полей модели используется [тег focus]({{ "/plugins/models/focus" | relative_url }}).
 
 

@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Меню
-permalink: /menu/
+parent: Плагины
+permalink: /plugins/menu/
 ---
 
 ![broken img]({{ "/img/menu-preview.png" | relative_url}})

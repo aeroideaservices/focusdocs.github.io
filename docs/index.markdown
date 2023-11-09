@@ -10,7 +10,7 @@ nav_order: 1
 Привет! Вы находитесь на странице документации Focus Admin. Проект помогает управлять данными в ваших сервисах
 {: .fs-6 .fw-300 }
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get started now]({{ "/installation" | relative_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub](Just the Docs repo){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
@@ -58,3 +58,6 @@ Focus Admin предназначена для административного
 
 ![Index img](https://i.stack.imgur.com/q3ceS.png)
 
+### Лицензия
+
+На текущий момент Focus Admin распространяется по `MIT license`

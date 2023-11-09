@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Медиа
-permalink: /media/
+permalink: /plugins/media/
+parent: Плагины
 ---
 
 ![broken img]({{ "/img/media-preview.png" | relative_url}})
