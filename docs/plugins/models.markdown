@@ -18,31 +18,31 @@ has_children: true
 * `models/plugin` - основной плагин
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/models/plugin
+go get github.com/aeroideaservices/focus/models/plugin
 ```
 
 * `models/postgres` - адаптер для работы с базой данных postgres
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/models/postgres
+go get github.com/aeroideaservices/focus/models/postgres
 ```
 
 * `models/rest` - адаптер, реализующий REST API
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/models/rest
+go get github.com/aeroideaservices/focus/models/rest
 ```
 
 * `models/aws-s3` - адаптер, реализующий интерфейс файлового хранилища, и работающий с s3-совместимыми хранилищами
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/models/aws-s3
+go get github.com/aeroideaservices/focus/models/aws-s3
 ```
 
 * `models/xlsx` - адаптер, реализующий экспорт в xlsx файлы *TODO*
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/models/xlsx
+go get github.com/aeroideaservices/focus/models/xlsx
 ```
 
 {: .note-title }
@@ -53,7 +53,7 @@ go get gitlab.aeroidea.ru/internal-projects/focus/models/xlsx
 Определить основные переменные фокуса
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
 var FocusDefinitions = []di.Def{
 	{
 		Name: "focus.logger",
@@ -143,7 +143,7 @@ var FocusDefinitions = []di.Def{
 Определить переменные, относящиеся к плагину моделей
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/models.go
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/models.go
 var ModelsDefinitions = appendArr([]di.Def{
 	{
 		Name: "focus.models.registry.models",
@@ -316,7 +316,7 @@ var ModelsDefinitions = appendArr([]di.Def{
 Если нужно, определить переводы к ошибкам
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go#L7
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go#L7
 var ErrTranslations = []et.Translation{
 	{
 		Tag:         "model-element.field.wrong",
@@ -332,7 +332,7 @@ var ErrTranslations = []et.Translation{
 Регистрация сервисов в контейнере
 
 ```javascript
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
 	if err = builder.Add(services_definitions.ModelsDefinitions...); err != nil {
 		return nil, err
 	}
@@ -341,7 +341,7 @@ var ErrTranslations = []et.Translation{
 Подключение роутов
 
 ```javascript
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
 func (r Router) Router() *gin.Engine {
 	gin.SetMode(r.ginMode)
 	router := gin.New()
@@ -380,7 +380,7 @@ func (r Router) Router() *gin.Engine {
 * `  focus.models.actions.models.callbacks` - добавляет основные колбэки для каждой модели отдельно: `postCreate`, `postUpdare` и `postDelete`\nПример:
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/models.go#L41
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/models.go#L41
 	{
 		Name: "focus.models.actions.models.callbacks",
 		Build: func(ctn di.Container) (interface{}, error) {
@@ -398,5 +398,5 @@ func (r Router) Router() *gin.Engine {
 
 ## Дополнительно
 
-[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
-[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/models){: .btn .btn-blue }
+[Примеры](https://github.com/aeroideaservices/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://github.com/aeroideaservices/focus/-/tree/develop/models){: .btn .btn-blue }

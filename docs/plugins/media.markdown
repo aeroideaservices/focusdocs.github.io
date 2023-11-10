@@ -16,22 +16,22 @@ parent: Плагины
 * `media/plugin` - основной плагин
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/media/plugin
+go get github.com/aeroideaservices/focus/media/plugin
 ```
 * `media/postgres` - адаптер для работы с базой данных postgres
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/media/postgres
+go get github.com/aeroideaservices/focus/media/postgres
 ```
 * `media/rest` - адаптер, реализующий REST API
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/media/rest
+go get github.com/aeroideaservices/focus/media/rest
 ```
 * `media/aws-s3` - адаптер, реализующий интерфейс файлового хранилища, и работающий с s3-совместимыми хранилищами
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/media/aws-s3
+go get github.com/aeroideaservices/focus/media/aws-s3
 ```
 
 {: .note-title }
@@ -42,7 +42,7 @@ go get gitlab.aeroidea.ru/internal-projects/focus/media/aws-s3
 Определить основные переменные фокуса
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
 var FocusDefinitions = []di.Def{
 	{
 		Name: "focus.logger",
@@ -132,7 +132,7 @@ var FocusDefinitions = []di.Def{
 Определить переменные, относящиеся к плагину медиа
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/media.go#L16
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/media.go#L16
 var MediaDefinitions = appendArr([]di.Def{
 	{
 		Name: "focus.media.baseUrl",
@@ -146,7 +146,7 @@ var MediaDefinitions = appendArr([]di.Def{
 Если нужно, определить переводы к ошибкам
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go#L7
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go#L7
 var ErrTranslations = []et.Translation{
 	{
 		Tag:         "folder.conflict",
@@ -198,7 +198,7 @@ var ErrTranslations = []et.Translation{
 Регистрация сервисов в контейнере
 
 ```javascript
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
 	if err = builder.Add(services_definitions.MediaDefinitions...); err != nil {
 		return nil, err
 	}
@@ -207,7 +207,7 @@ var ErrTranslations = []et.Translation{
 Подключение роутов
 
 ```javascript
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
 func (r Router) Router() *gin.Engine {
 	gin.SetMode(r.ginMode)
 	router := gin.New()
@@ -244,5 +244,5 @@ func (r Router) Router() *gin.Engine {
 
 ## Дополнительно
 
-[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
-[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/media){: .btn .btn-blue }
+[Примеры](https://github.com/aeroideaservices/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://github.com/aeroideaservices/focus/-/tree/develop/media){: .btn .btn-blue }

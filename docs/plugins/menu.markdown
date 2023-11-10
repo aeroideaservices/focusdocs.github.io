@@ -16,19 +16,19 @@ permalink: /plugins/menu/
 * `menu/plugin` - основной плагин
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/menu/plugin
+go get github.com/aeroideaservices/focus/menu/plugin
 ```
 
 * `menu/postgres` - адаптер для работы с базой данных postgres
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/menu/postgres
+go get github.com/aeroideaservices/focus/menu/postgres
 ```
 
 * `menu/rest` - адаптер, реализующий REST API
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/menu/rest
+go get github.com/aeroideaservices/focus/menu/rest
 ```
 
 {: .note-title }
@@ -39,7 +39,7 @@ go get gitlab.aeroidea.ru/internal-projects/focus/menu/rest
 Определить основные переменные фокуса
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
 var FocusDefinitions = []di.Def{
 	{
 		Name: "focus.logger",
@@ -101,7 +101,7 @@ var FocusDefinitions = []di.Def{
 Определить переменные, относящиеся к плагину меню
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/menu.go#L11
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/menu.go#L11
 var MenuDefinitions = appendArr([]di.Def{
 	{
 		Name: "focus.menu.maxMenuItemsDepth",
@@ -115,7 +115,7 @@ var MenuDefinitions = appendArr([]di.Def{
 Если нужно, определить переводы к ошибкам
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go
 var ErrTranslations = []et.Translation{
 	{
 		Tag:         "menu.conflict",
@@ -143,7 +143,7 @@ var ErrTranslations = []et.Translation{
 Регистрация сервисов в контейнере
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
 	if err = builder.Add(services_definitions.MenuDefinitions...); err != nil {
 		return nil, err
 	}
@@ -152,7 +152,7 @@ var ErrTranslations = []et.Translation{
 Подключение роутов
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
 func (r Router) Router() *gin.Engine {
 	...
 
@@ -173,5 +173,5 @@ func (r Router) Router() *gin.Engine {
 
 ## Дополнительно
 
-[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
-[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/menu){: .btn .btn-blue }
+[Примеры](https://github.com/aeroideaservices/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://github.com/aeroideaservices/focus/-/tree/develop/menu){: .btn .btn-blue }

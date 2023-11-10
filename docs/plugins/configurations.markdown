@@ -16,19 +16,19 @@ parent: Плагины
 * `configurations/plugin` - основной плагин
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/configurations/plugin
+go get github.com/aeroideaservices/focus/configurations/plugin
 ```
 
 * `configurations/postgres` - адаптер для работы с базой данных postgres
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/configurations/postgres
+go get github.com/aeroideaservices/focus/configurations/postgres
 ```
 
 * `configurations/rest` - адаптер, реализующий REST API
 
 ```bash
-go get gitlab.aeroidea.ru/internal-projects/focus/configurations/rest
+go get github.com/aeroideaservices/focus/configurations/rest
 ```
 
 
@@ -40,7 +40,7 @@ go get gitlab.aeroidea.ru/internal-projects/focus/configurations/rest
 Определить основные переменные фокуса
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/focus.go#L17
 var FocusDefinitions = []di.Def{
 	{
 		Name: "focus.logger",
@@ -102,7 +102,7 @@ var FocusDefinitions = []di.Def{
 Определить переменные, относящиеся к плагину конфигураций (в примере определяется хендлер с публичным методом получения настроек по коду конфигурации, не обязательно)
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/configurations.go#L15
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/configurations.go#L15
 var ConfigurationsDefinitions = appendArr([]di.Def{
 	{
 		Name: "optionsHandler",
@@ -118,7 +118,7 @@ var ConfigurationsDefinitions = appendArr([]di.Def{
 Если нужно, определить переводы к ошибкам
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/services_definitions/translations/translations.go
 var ErrTranslations = []et.Translation{
 	{
 		Tag:         "conf.exists",
@@ -142,7 +142,7 @@ var ErrTranslations = []et.Translation{
 Регистрация сервисов в контейнере
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/infrastructure/registry/container.go#L65
 	if err = builder.Add(services_definitions.ConfigurationsDefinitions...); err != nil {
 		return nil, err
 	}
@@ -151,7 +151,7 @@ var ErrTranslations = []et.Translation{
 Подключение роутов
 
 ```go
-// https://gitlab.aeroidea.ru/internal-projects/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
+// https://github.com/aeroideaservices/focus-group/demo/-/blob/develop/internal/adapters/rest/router.go#L102
 func (r Router) Router() *gin.Engine {
 	...
 
@@ -172,5 +172,5 @@ func (r Router) Router() *gin.Engine {
 
 ## Дополнительно
 
-[Примеры](https://gitlab.aeroidea.ru/internal-projects/focus-group/demo){: .btn .btn-purple }
-[Все модули](https://gitlab.aeroidea.ru/internal-projects/focus/-/tree/develop/configurations){: .btn .btn-blue }
+[Примеры](https://github.com/aeroideaservices/focus-group/demo){: .btn .btn-purple }
+[Все модули](https://github.com/aeroideaservices/focus/-/tree/develop/configurations){: .btn .btn-blue }

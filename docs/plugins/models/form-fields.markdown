@@ -8,7 +8,7 @@ nav_order: 2
 ---
 # Поля формы
 
-Описание полей формы получается в [методе получения описания модели](https://gitlab.aeroidea.ru/internal-projects/focus/-/blob/develop/models/rest/openapi.yaml#/Models/get_models__model_code_). Для формы создания и обновления настройки могут различаться.
+Описание полей формы получается в [методе получения описания модели](https://github.com/aeroideaservices/focus/-/blob/develop/models/rest/openapi.yaml#/Models/get_models__model_code_). Для формы создания и обновления настройки могут различаться.
 
 ### Простые поля
 
